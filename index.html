@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ว่าที่ร้อยตรีพงษ์พนา พงษ์โสภา - IT Portfolio & Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Animated Background Canvas for Circuit Data Flow -->
+    <canvas id="circuitCanvas"></canvas>
+
+    <!-- Certificate Modal Popup -->
+    <div id="certModal" class="cert-modal" onclick="closeModal(event)">
+        <span class="close-modal" onclick="closeModal(event)">&times;</span>
+        <img class="cert-modal-content" id="certImage" src="" alt="Certificate">
+        <div id="certCaption"></div>
+    </div>
+
+    <!-- Task Detail Modal Popup -->
+    <div id="taskModal" class="cert-modal" style="backdrop-filter: blur(8px);" onclick="closeTaskModal(event)">
+        <div class="task-modal-content" id="taskModalContentBox">
+            <span class="close-modal" style="top: 15px; right: 25px; color: var(--text-muted); font-size: 35px;" onclick="closeTaskModal(event)">&times;</span>
+            <div id="taskModalIcon" style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent-cyan-glow);"></div>
+            <h2 id="taskModalTitle" class="task-modal-title"></h2>
+            <div id="taskModalBody" class="task-modal-body"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Top Navigation Bar & Branding -->
+        <div class="top-bar">
+            <div class="org-brand">
+                <img src="assets/images/cmu_sublogoV.png" alt="CMU Logo" class="cmu-logo" id="cmuLogo">
+                <div class="org-text">
+                    <span class="org-name">มหาวิทยาลัยเชียงใหม่</span>
+                </div>
+            </div>
+            
+            <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">
+                <i class="fa-solid fa-circle-half-stroke" style="color: var(--accent-cyan-glow);"></i>
+                <span id="themeBtnText">Auto Mode</span>
+            </button>
+        </div>
+
+        <!-- Header Profile -->
+        <header>
+            <div class="profile-info">
+                <div class="avatar-container">
+                    <div class="avatar">
+                        <img src="assets/images/IMG_1324 2.png" alt="Profile Picture">
+                    </div>
+                </div>
+                <div class="profile-text">
+                    <h1>ว่าที่ร้อยตรีพงษ์พนา พงษ์โสภา</h1>
+                    
+                    <div class="badges-row">
+                        <div class="badge-item position-badge">
+                            <i class="fa-solid fa-microchip"></i> นักวิชาการคอมพิวเตอร์
+                        </div>
+                        <div class="badge-item affiliation-badge">
+                            <i class="fa-solid fa-building-columns"></i> กองบริหารงานกลาง สำนักงานมหาวิทยาลัย (CAD OOU CMU)
+                        </div>
+                    </div>
+
+                    <p>ระบบห้องประชุม สถาปัตยกรรมระบบคอมพิวเตอร์ เครือข่าย และผู้เชี่ยวชาญด้านความมั่นคงปลอดภัยไซเบอร์ระดับสากล</p>
+
+                    <div class="cert-links">
+                        <a href="https://www.credly.com/users/phongphana-phongsopa" target="_blank" class="cert-btn credly">
+                            <i class="fa-solid fa-award"></i> Credly Verified Badges
+                        </a>
+                        <a href="https://o365cmu-my.sharepoint.com/personal/phongphana_p_cmu_ac_th1/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fphongphana%5Fp%5Fcmu%5Fac%5Fth1%2FDocuments%2FCert%40Beer&ga=1" target="_blank" class="cert-btn onedrive">
+                            <i class="fa-solid fa-folder-open"></i> คลังใบประกาศ (Cert@Beer)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Primary Workload Section -->
+        <div class="section-header">
+            <div class="section-title">
+                <i class="fa-solid fa-layer-group"></i>
+                ภาระงานประจำ (Primary Routine Duties)
+            </div>
+            <div class="total-hours-badge">
+                <i class="fa-regular fa-clock"></i> 28.00 ชั่วโมง/สัปดาห์
+            </div>
+        </div>
+
+        <!-- Beautiful Masonry-like Grid -->
+        <div class="routine-grid">
+            
+            <!-- Card 1 (10.00 Hours) -->
+            <div class="task-card card-1" onclick="openTaskModal('task1')">
+                <div class="card-icon"><i class="fa-solid fa-people-roof"></i></div>
+                <div class="card-content">
+                    <div class="card-hours">10.00 ชม.</div>
+                    <div class="card-title">ดูแลห้องประชุม</div>
+                    <div class="card-desc">ดูแลความเรียบร้อยพร้อมใช้ แก้ไขปัญหา ห้องประชุมที่ได้รับมอบหมาย (เช่น ห้องบัวเรศ คำทอง)</div>
+                </div>
+            </div>
+
+            <!-- Card 2 (6.00 Hours) -->
+            <div class="task-card card-2" onclick="openTaskModal('task2')">
+                <div class="card-icon"><i class="fa-solid fa-server"></i></div>
+                <div class="card-content">
+                    <div class="card-hours">6.00 ชม.</div>
+                    <div class="card-title">งานระบบเทคโนโลยีสารสนเทศ</div>
+                    <div class="card-desc">ดูแลสถาปัตยกรรม Network, Server, และ Database ของหน่วยงานให้พร้อมใช้งานและปลอดภัย</div>
+                </div>
+            </div>
+
+            <!-- Card 3 (6.00 Hours) -->
+            <div class="task-card card-3" onclick="openTaskModal('task3')">
+                <div class="card-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                <div class="card-content">
+                    <div class="card-hours">6.00 ชม.</div>
+                    <div class="card-title">ซ่อมบำรุงคอมพิวเตอร์</div>
+                    <div class="card-desc">ซ่อมบำรุงคอมพิวเตอร์และอุปกรณ์ต่อพ่วง ให้คำปรึกษาในการจัดหาสเปคที่เหมาะสม (Custom Spec PC)</div>
+                </div>
+            </div>
+
+            <!-- Card 4 (4.00 Hours) -->
+            <div class="task-card card-4" onclick="openTaskModal('task4')">
+                <div class="card-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                <div class="card-content">
+                    <div class="card-hours">4.00 ชม.</div>
+                    <div class="card-title">การจัดการครุภัณฑ์</div>
+                    <div class="card-desc">ตรวจเช็คสถานะครุภัณฑ์ภาพ เสียง แสงสว่าง และประเมินสภาพเพื่อจัดทำรายงาน</div>
+                </div>
+            </div>
+
+            <!-- Card 5 (2.00 Hours) -->
+            <div class="task-card card-5" onclick="openTaskModal('task5')">
+                <div class="card-icon"><i class="fa-solid fa-comments-dollar"></i></div>
+                <div class="card-content">
+                    <div class="card-hours">2.00 ชม.</div>
+                    <div class="card-title">ให้คำปรึกษาไอที</div>
+                    <div class="card-desc">ให้คำปรึกษาด้านเทคโนโลยีสารสนเทศและระบบ Cybersecurity เชิงลึกแก่องค์กร</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Details Panel -->
+        <div class="glass-panel">
+            <div class="nav-tabs">
+                <button class="tab-btn active" onclick="switchTab('breakdown')">
+                    <i class="fa-solid fa-chart-pie"></i> โครงสร้าง TOR รวม (35 ชม.)
+                </button>
+                <button class="tab-btn" onclick="switchTab('certs')">
+                    <i class="fa-solid fa-shield-halved"></i> ข้อมูลใบรับรองสากล
+                </button>
+            </div>
+
+            <!-- Tab 1: Breakdown -->
+            <div id="breakdown" class="tab-content active">
+                <h3 style="margin-bottom: 1.2rem; font-size: 1.3rem;">สัดส่วนภาระงานรวมรายสัปดาห์</h3>
+                
+                <div class="workload-item">
+                    <div class="workload-label">
+                        <span><i class="fa-solid fa-star" style="color: var(--accent-amber);"></i> 1. ภาระงานประจำ (Primary Routine Duties)</span>
+                        <span style="color: var(--accent-cyan-glow);">28.00 ชม. (80.0%)</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: 80.0%; background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));"></div>
+                    </div>
+                </div>
+
+                <div class="workload-item">
+                    <div class="workload-label">
+                        <span><i class="fa-solid fa-list-check" style="color: var(--accent-emerald);"></i> 2. ภาระงานที่ได้รับมอบหมายอื่น ๆ</span>
+                        <span style="color: var(--accent-emerald);">4.00 ชม. (11.4%)</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: 11.4%; background: linear-gradient(90deg, var(--accent-emerald), #047857);"></div>
+                    </div>
+                </div>
+
+                <div class="workload-item">
+                    <div class="workload-label">
+                        <span><i class="fa-solid fa-graduation-cap" style="color: var(--accent-rose);"></i> 3. ภาระงานเชิงพัฒนา (Continuous Development)</span>
+                        <span style="color: var(--accent-rose);">3.00 ชม. (8.6%)</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: 8.6%; background: linear-gradient(90deg, var(--accent-rose), #be123c);"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Certifications (Enhanced with Popups) -->
+            <div id="certs" class="tab-content">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.6rem; font-weight: 800; background: linear-gradient(to right, var(--accent-cyan-glow), var(--accent-purple-glow)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem;">ใบรับรองมาตรฐานระดับโลก</h3>
+                    <p style="color: var(--text-muted); font-size: 1rem;">คลิกที่ป้ายการรับรองด้านล่างเพื่อแสดงภาพใบประกาศนียบัตรตัวจริง (Popup)</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+                    
+                    <!-- Cert 1 -->
+                    <div class="cert-item-card" onclick="openCertModal('assets/images/ComtiaSec+.png', 'CompTIA Security+ Certification')">
+                        <img src="https://images.credly.com/images/80d8a06a-c384-42bf-ad36-db81bce5adce/blob" alt="CompTIA" class="cert-logo-img">
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.2rem;">CompTIA Security+</div>
+                            <div style="font-size: 0.9rem; color: var(--accent-cyan-glow); margin-top: 0.3rem;">Global Security Architecture</div>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.8rem; line-height: 1.4;">การันตีทักษะด้านความมั่นคงปลอดภัยสากล การจัดการความเสี่ยง และการป้องกันภัยคุกคามไซเบอร์ระดับองค์กร</p>
+                        </div>
+                        <div class="click-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> คลิกดูใบรับรองจริง</div>
+                    </div>
+
+                    <!-- Cert 2 -->
+                    <div class="cert-item-card" onclick="openCertModal('assets/images/CC.png', 'ISC2 Certified in Cybersecurity')">
+                        <img src="https://images.credly.com/images/2030e43f-8003-4d4b-9630-847add403c87/image.png" alt="ISC2" class="cert-logo-img">
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.2rem;">ISC2 CC</div>
+                            <div style="font-size: 0.9rem; color: var(--accent-purple-glow); margin-top: 0.3rem;">Cybersecurity Standard</div>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.8rem; line-height: 1.4;">รับรองความรู้พื้นฐานและมาตรฐานด้าน Cybersecurity ที่ได้รับการยอมรับในอุตสาหกรรมเทคโนโลยีทั่วโลก</p>
+                        </div>
+                        <div class="click-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> คลิกดูใบรับรองจริง</div>
+                    </div>
+                    
+                    <!-- Cert 3 (ECSS) -->
+                    <div class="cert-item-card" onclick="openCertModal('assets/images/ECSS.png', 'EC-Council Certified Security Specialist')">
+                        <img src="assets/images/badge-ECSS.png" alt="ECSS" class="cert-logo-img" style="filter: drop-shadow(0 6px 12px rgba(244, 63, 94, 0.3)); border-radius: 50%;">
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.2rem;">EC-Council ECSS</div>
+                            <div style="font-size: 0.9rem; color: var(--accent-rose); margin-top: 0.3rem;">Certified Security Specialist</div>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.8rem; line-height: 1.4;">ผู้เชี่ยวชาญด้านความปลอดภัยของข้อมูล เครือข่าย และระบบปฏิบัติการตามกรอบโครงสร้างสากล</p>
+                        </div>
+                        <div class="click-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> คลิกดูใบรับรองจริง</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
