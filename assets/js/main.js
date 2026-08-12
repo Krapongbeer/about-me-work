@@ -1,46 +1,27 @@
-// 3-State Theme Logic: auto -> day -> night -> auto
-        let currentThemeMode = 'auto'; // default state
+// 2-State Theme Logic: dark <-> light
+        let currentThemeMode = 'dark'; // default state
 
         function applyTheme(mode) {
-            let effectiveTheme = mode;
-            // If Auto, use the system preference
-            if (mode === 'auto') {
-                effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            }
-            
-            document.documentElement.setAttribute('data-theme', effectiveTheme);
+            document.documentElement.setAttribute('data-theme', mode);
             
             const themeBtn = document.getElementById('themeBtn');
             
             if (mode === 'dark') {
                 themeBtn.innerHTML = `<i class="fa-solid fa-moon" style="color: var(--accent-purple-glow);"></i> <span>Night Mode</span>`;
-            } else if (mode === 'light') {
-                themeBtn.innerHTML = `<i class="fa-solid fa-sun" style="color: var(--accent-amber);"></i> <span>Day Mode</span>`;
             } else {
-                themeBtn.innerHTML = `<i class="fa-solid fa-circle-half-stroke" style="color: var(--accent-cyan-glow);"></i> <span>Auto Mode</span>`;
+                themeBtn.innerHTML = `<i class="fa-solid fa-sun" style="color: var(--accent-amber);"></i> <span>Day Mode</span>`;
             }
         }
 
         function toggleTheme() {
-            // Cycle: Auto -> Light (Day) -> Dark (Night) -> Auto
-            if (currentThemeMode === 'auto') {
-                currentThemeMode = 'light';
-            } else if (currentThemeMode === 'light') {
-                currentThemeMode = 'dark';
-            } else {
-                currentThemeMode = 'auto';
-            }
+            // Cycle: Dark <-> Light
+            currentThemeMode = (currentThemeMode === 'dark') ? 'light' : 'dark';
             applyTheme(currentThemeMode);
         }
 
         // Initialize Theme on Load
         window.addEventListener('DOMContentLoaded', () => {
-            applyTheme('auto');
-            
-            // Listen for system theme changes in case it's on auto
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-                if(currentThemeMode === 'auto') applyTheme('auto');
-            });
+            applyTheme('dark');
         });
 
         // Tab Switching
