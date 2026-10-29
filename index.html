@@ -157,11 +157,11 @@
                 <button class="tab-btn active" onclick="switchTab('qa')">
                     <i class="fa-solid fa-comments"></i> ตอบ 3 คำถาม
                 </button>
-                <button class="tab-btn" onclick="switchTab('breakdown')">
-                    <i class="fa-solid fa-chart-pie"></i> โครงสร้าง TOR รวม (35 ชม.)
-                </button>
                 <button class="tab-btn" onclick="switchTab('certs')">
                     <i class="fa-solid fa-shield-halved"></i> ข้อมูลใบรับรองสากล
+                </button>
+                <button class="tab-btn" onclick="switchTab('breakdown')">
+                    <i class="fa-solid fa-chart-pie"></i> โครงสร้าง TOR รวม (35 ชม.)
                 </button>
             </div>
 
@@ -286,42 +286,7 @@
                 </div>
             </div>
 
-            <!-- Tab 2: Breakdown -->
-            <div id="breakdown" class="tab-content">
-                <h3 style="margin-bottom: 1.2rem; font-size: 1.3rem;">สัดส่วนภาระงานรวมรายสัปดาห์</h3>
-                
-                <div class="workload-item">
-                    <div class="workload-label">
-                        <span><i class="fa-solid fa-star" style="color: var(--accent-amber);"></i> 1. ภาระงานประจำ (Primary Routine Duties)</span>
-                        <span style="color: var(--accent-cyan-glow);">28.00 ชม. (80.0%)</span>
-                    </div>
-                    <div class="progress-bar-bg">
-                        <div class="progress-bar-fill" style="width: 80.0%; background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));"></div>
-                    </div>
-                </div>
-
-                <div class="workload-item">
-                    <div class="workload-label">
-                        <span><i class="fa-solid fa-list-check" style="color: var(--accent-emerald);"></i> 2. ภาระงานที่ได้รับมอบหมายอื่น ๆ</span>
-                        <span style="color: var(--accent-emerald);">4.00 ชม. (11.4%)</span>
-                    </div>
-                    <div class="progress-bar-bg">
-                        <div class="progress-bar-fill" style="width: 11.4%; background: linear-gradient(90deg, var(--accent-emerald), #047857);"></div>
-                    </div>
-                </div>
-
-                <div class="workload-item">
-                    <div class="workload-label">
-                        <span><i class="fa-solid fa-graduation-cap" style="color: var(--accent-rose);"></i> 3. ภาระงานเชิงพัฒนา (Continuous Development)</span>
-                        <span style="color: var(--accent-rose);">3.00 ชม. (8.6%)</span>
-                    </div>
-                    <div class="progress-bar-bg">
-                        <div class="progress-bar-fill" style="width: 8.6%; background: linear-gradient(90deg, var(--accent-rose), #be123c);"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tab 3: Certifications (Enhanced with Popups) -->
+            <!-- Tab 2: Certifications (Enhanced with Popups) -->
             <div id="certs" class="tab-content">
                 <div style="text-align: center; margin-bottom: 2rem;">
                     <h3 style="font-size: 1.6rem; font-weight: 800; background: linear-gradient(to right, var(--accent-cyan-glow), var(--accent-purple-glow)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem;">ใบรับรองมาตรฐานระดับสากล</h3>
@@ -363,6 +328,41 @@
                         <div class="click-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> คลิกดูใบรับรองจริง</div>
                     </div>
 
+                </div>
+            </div>
+
+            <!-- Tab 3: Breakdown -->
+            <div id="breakdown" class="tab-content">
+                <h3 style="margin-bottom: 1.2rem; font-size: 1.3rem;">สัดส่วนภาระงานรวมรายสัปดาห์</h3>
+                
+                <div class="workload-item">
+                    <div class="workload-label">
+                        <span><i class="fa-solid fa-star" style="color: var(--accent-amber);"></i> 1. ภาระงานประจำ (Primary Routine Duties)</span>
+                        <span style="color: var(--accent-cyan-glow);">28.00 ชม. (80.0%)</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: 80.0%; background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));"></div>
+                    </div>
+                </div>
+
+                <div class="workload-item">
+                    <div class="workload-label">
+                        <span><i class="fa-solid fa-list-check" style="color: var(--accent-emerald);"></i> 2. ภาระงานที่ได้รับมอบหมายอื่น ๆ</span>
+                        <span style="color: var(--accent-emerald);">4.00 ชม. (11.4%)</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: 11.4%; background: linear-gradient(90deg, var(--accent-emerald), #047857);"></div>
+                    </div>
+                </div>
+
+                <div class="workload-item">
+                    <div class="workload-label">
+                        <span><i class="fa-solid fa-graduation-cap" style="color: var(--accent-rose);"></i> 3. ภาระงานเชิงพัฒนา (Continuous Development)</span>
+                        <span style="color: var(--accent-rose);">3.00 ชม. (8.6%)</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: 8.6%; background: linear-gradient(90deg, var(--accent-rose), #be123c);"></div>
+                    </div>
                 </div>
             </div>
 
