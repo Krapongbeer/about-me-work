@@ -76,9 +76,9 @@
                        </ul>`
             },
             'task2': {
-                title: 'งานระบบเทคโนโลยีสารสนเทศ',
+                title: 'งานระบบเทคโนโลยีสารสนเทศ กองบริหารงานกลาง',
                 icon: '<i class="fa-solid fa-server" style="color: var(--accent-purple-glow);"></i>',
-                body: `บริหารจัดการและบำรุงรักษาระบบเครือข่ายส่วนกลาง (Network & Server) ขององค์กร<br><br>
+                body: `บริหารจัดการและบำรุงรักษาระบบเครือข่ายกองฯ (Network & Server)<br><br>
                        <ul style="padding-left: 1.5rem; margin-top: 0.5rem; text-align: left;">
                          <li style="margin-bottom: 0.5rem;">ตรวจสอบความปลอดภัยทางไซเบอร์เบื้องต้น (Cybersecurity) ป้องกันภัยคุกคาม</li>
                          <li style="margin-bottom: 0.5rem;">ดูแลระบบฐานข้อมูลและสถาปัตยกรรมระบบคอมพิวเตอร์ให้สามารถทำงานได้ 24/7</li>
