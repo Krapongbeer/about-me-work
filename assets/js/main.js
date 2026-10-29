@@ -66,7 +66,7 @@
         // Task Details Data Map
         const taskData = {
             'task1': {
-                title: 'ดูแลห้องประชุม',
+                title: 'ดูแลห้องประชุม ที่กองบริหารงานกลางรับผิดชอบ',
                 icon: '<i class="fa-solid fa-people-roof" style="color: var(--accent-cyan-glow);"></i>',
                 body: `ดูแลความพร้อมของระบบภาพ เสียง และแสงสว่างในห้องประชุม (เช่น ห้องบัวเรศ คำทอง) อย่างเต็มรูปแบบ<br><br>
                        <ul style="padding-left: 1.5rem; margin-top: 0.5rem; text-align: left;">
