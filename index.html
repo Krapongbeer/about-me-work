@@ -154,99 +154,19 @@
         <!-- Details Panel -->
         <div class="glass-panel">
             <div class="nav-tabs">
-                <button class="tab-btn active" onclick="switchTab('breakdown')">
+                <button class="tab-btn active" onclick="switchTab('qa')">
+                    <i class="fa-solid fa-comments"></i> ตอบ 3 คำถาม
+                </button>
+                <button class="tab-btn" onclick="switchTab('breakdown')">
                     <i class="fa-solid fa-chart-pie"></i> โครงสร้าง TOR รวม (35 ชม.)
                 </button>
                 <button class="tab-btn" onclick="switchTab('certs')">
                     <i class="fa-solid fa-shield-halved"></i> ข้อมูลใบรับรองสากล
                 </button>
-                <button class="tab-btn" onclick="switchTab('qa')">
-                    <i class="fa-solid fa-comments"></i> ตอบ 3 คำถาม
-                </button>
             </div>
 
-            <!-- Tab 1: Breakdown -->
-            <div id="breakdown" class="tab-content active">
-                <h3 style="margin-bottom: 1.2rem; font-size: 1.3rem;">สัดส่วนภาระงานรวมรายสัปดาห์</h3>
-                
-                <div class="workload-item">
-                    <div class="workload-label">
-                        <span><i class="fa-solid fa-star" style="color: var(--accent-amber);"></i> 1. ภาระงานประจำ (Primary Routine Duties)</span>
-                        <span style="color: var(--accent-cyan-glow);">28.00 ชม. (80.0%)</span>
-                    </div>
-                    <div class="progress-bar-bg">
-                        <div class="progress-bar-fill" style="width: 80.0%; background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));"></div>
-                    </div>
-                </div>
-
-                <div class="workload-item">
-                    <div class="workload-label">
-                        <span><i class="fa-solid fa-list-check" style="color: var(--accent-emerald);"></i> 2. ภาระงานที่ได้รับมอบหมายอื่น ๆ</span>
-                        <span style="color: var(--accent-emerald);">4.00 ชม. (11.4%)</span>
-                    </div>
-                    <div class="progress-bar-bg">
-                        <div class="progress-bar-fill" style="width: 11.4%; background: linear-gradient(90deg, var(--accent-emerald), #047857);"></div>
-                    </div>
-                </div>
-
-                <div class="workload-item">
-                    <div class="workload-label">
-                        <span><i class="fa-solid fa-graduation-cap" style="color: var(--accent-rose);"></i> 3. ภาระงานเชิงพัฒนา (Continuous Development)</span>
-                        <span style="color: var(--accent-rose);">3.00 ชม. (8.6%)</span>
-                    </div>
-                    <div class="progress-bar-bg">
-                        <div class="progress-bar-fill" style="width: 8.6%; background: linear-gradient(90deg, var(--accent-rose), #be123c);"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tab 2: Certifications (Enhanced with Popups) -->
-            <div id="certs" class="tab-content">
-                <div style="text-align: center; margin-bottom: 2rem;">
-                    <h3 style="font-size: 1.6rem; font-weight: 800; background: linear-gradient(to right, var(--accent-cyan-glow), var(--accent-purple-glow)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem;">ใบรับรองมาตรฐานระดับสากล</h3>
-                    <p style="color: var(--text-muted); font-size: 1rem;">คลิกที่ป้ายการรับรองด้านล่างเพื่อแสดงภาพใบประกาศนียบัตรตัวจริง (Popup)</p>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
-                    
-                    <!-- Cert 1 -->
-                    <div class="cert-item-card" onclick="openCertModal('assets/images/ComtiaSec+.png', 'CompTIA Security+ Certification')">
-                        <img src="https://images.credly.com/images/80d8a06a-c384-42bf-ad36-db81bce5adce/blob" alt="CompTIA" class="cert-logo-img">
-                        <div>
-                            <div style="font-weight: 800; font-size: 1.2rem;">CompTIA Security+</div>
-                            <div style="font-size: 0.9rem; color: var(--accent-cyan-glow); margin-top: 0.3rem;">Global Security Architecture</div>
-                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.8rem; line-height: 1.4;">การันตีทักษะด้านความมั่นคงปลอดภัยสากล การจัดการความเสี่ยง และการป้องกันภัยคุกคามไซเบอร์ระดับองค์กร</p>
-                        </div>
-                        <div class="click-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> คลิกดูใบรับรองจริง</div>
-                    </div>
-
-                    <!-- Cert 2 -->
-                    <div class="cert-item-card" onclick="openCertModal('assets/images/CC.png', 'ISC2 Certified in Cybersecurity')">
-                        <img src="https://images.credly.com/images/2030e43f-8003-4d4b-9630-847add403c87/image.png" alt="ISC2" class="cert-logo-img">
-                        <div>
-                            <div style="font-weight: 800; font-size: 1.2rem;">ISC2 CC</div>
-                            <div style="font-size: 0.9rem; color: var(--accent-purple-glow); margin-top: 0.3rem;">Cybersecurity Standard</div>
-                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.8rem; line-height: 1.4;">รับรองความรู้พื้นฐานและมาตรฐานด้าน Cybersecurity ที่ได้รับการยอมรับในอุตสาหกรรมเทคโนโลยีทั่วโลก</p>
-                        </div>
-                        <div class="click-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> คลิกดูใบรับรองจริง</div>
-                    </div>
-                    
-                    <!-- Cert 3 (ECSS) -->
-                    <div class="cert-item-card" onclick="openCertModal('assets/images/ECSS.png', 'EC-Council Certified Security Specialist')">
-                        <img src="assets/images/badge-ECSS.png" alt="ECSS" class="cert-logo-img" style="filter: drop-shadow(0 6px 12px rgba(244, 63, 94, 0.3)); border-radius: 50%;">
-                        <div>
-                            <div style="font-weight: 800; font-size: 1.2rem;">EC-Council ECSS</div>
-                            <div style="font-size: 0.9rem; color: var(--accent-rose); margin-top: 0.3rem;">Certified Security Specialist</div>
-                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.8rem; line-height: 1.4;">ผู้เชี่ยวชาญด้านความปลอดภัยของข้อมูล เครือข่าย และระบบปฏิบัติการตามกรอบโครงสร้างสากล</p>
-                        </div>
-                        <div class="click-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> คลิกดูใบรับรองจริง</div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Tab 3: Q&A (ตอบ 3 คำถาม) -->
-            <div id="qa" class="tab-content">
+            <!-- Tab 1: Q&A (ตอบ 3 คำถาม) -->
+            <div id="qa" class="tab-content active">
                 <div style="text-align: center; margin-bottom: 2rem;">
                     <h3 style="font-size: 1.6rem; font-weight: 800; background: linear-gradient(to right, var(--accent-cyan-glow), var(--accent-purple-glow)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem;">
                         <i class="fa-solid fa-comments" style="-webkit-text-fill-color: var(--accent-cyan-glow);"></i> ตอบ 3 คำถาม
@@ -363,6 +283,86 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Breakdown -->
+            <div id="breakdown" class="tab-content">
+                <h3 style="margin-bottom: 1.2rem; font-size: 1.3rem;">สัดส่วนภาระงานรวมรายสัปดาห์</h3>
+                
+                <div class="workload-item">
+                    <div class="workload-label">
+                        <span><i class="fa-solid fa-star" style="color: var(--accent-amber);"></i> 1. ภาระงานประจำ (Primary Routine Duties)</span>
+                        <span style="color: var(--accent-cyan-glow);">28.00 ชม. (80.0%)</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: 80.0%; background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));"></div>
+                    </div>
+                </div>
+
+                <div class="workload-item">
+                    <div class="workload-label">
+                        <span><i class="fa-solid fa-list-check" style="color: var(--accent-emerald);"></i> 2. ภาระงานที่ได้รับมอบหมายอื่น ๆ</span>
+                        <span style="color: var(--accent-emerald);">4.00 ชม. (11.4%)</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: 11.4%; background: linear-gradient(90deg, var(--accent-emerald), #047857);"></div>
+                    </div>
+                </div>
+
+                <div class="workload-item">
+                    <div class="workload-label">
+                        <span><i class="fa-solid fa-graduation-cap" style="color: var(--accent-rose);"></i> 3. ภาระงานเชิงพัฒนา (Continuous Development)</span>
+                        <span style="color: var(--accent-rose);">3.00 ชม. (8.6%)</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: 8.6%; background: linear-gradient(90deg, var(--accent-rose), #be123c);"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Certifications (Enhanced with Popups) -->
+            <div id="certs" class="tab-content">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.6rem; font-weight: 800; background: linear-gradient(to right, var(--accent-cyan-glow), var(--accent-purple-glow)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem;">ใบรับรองมาตรฐานระดับสากล</h3>
+                    <p style="color: var(--text-muted); font-size: 1rem;">คลิกที่ป้ายการรับรองด้านล่างเพื่อแสดงภาพใบประกาศนียบัตรตัวจริง (Popup)</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+                    
+                    <!-- Cert 1 -->
+                    <div class="cert-item-card" onclick="openCertModal('assets/images/ComtiaSec+.png', 'CompTIA Security+ Certification')">
+                        <img src="https://images.credly.com/images/80d8a06a-c384-42bf-ad36-db81bce5adce/blob" alt="CompTIA" class="cert-logo-img">
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.2rem;">CompTIA Security+</div>
+                            <div style="font-size: 0.9rem; color: var(--accent-cyan-glow); margin-top: 0.3rem;">Global Security Architecture</div>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.8rem; line-height: 1.4;">การันตีทักษะด้านความมั่นคงปลอดภัยสากล การจัดการความเสี่ยง และการป้องกันภัยคุกคามไซเบอร์ระดับองค์กร</p>
+                        </div>
+                        <div class="click-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> คลิกดูใบรับรองจริง</div>
+                    </div>
+
+                    <!-- Cert 2 -->
+                    <div class="cert-item-card" onclick="openCertModal('assets/images/CC.png', 'ISC2 Certified in Cybersecurity')">
+                        <img src="https://images.credly.com/images/2030e43f-8003-4d4b-9630-847add403c87/image.png" alt="ISC2" class="cert-logo-img">
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.2rem;">ISC2 CC</div>
+                            <div style="font-size: 0.9rem; color: var(--accent-purple-glow); margin-top: 0.3rem;">Cybersecurity Standard</div>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.8rem; line-height: 1.4;">รับรองความรู้พื้นฐานและมาตรฐานด้าน Cybersecurity ที่ได้รับการยอมรับในอุตสาหกรรมเทคโนโลยีทั่วโลก</p>
+                        </div>
+                        <div class="click-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> คลิกดูใบรับรองจริง</div>
+                    </div>
+                    
+                    <!-- Cert 3 (ECSS) -->
+                    <div class="cert-item-card" onclick="openCertModal('assets/images/ECSS.png', 'EC-Council Certified Security Specialist')">
+                        <img src="assets/images/badge-ECSS.png" alt="ECSS" class="cert-logo-img" style="filter: drop-shadow(0 6px 12px rgba(244, 63, 94, 0.3)); border-radius: 50%;">
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.2rem;">EC-Council ECSS</div>
+                            <div style="font-size: 0.9rem; color: var(--accent-rose); margin-top: 0.3rem;">Certified Security Specialist</div>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.8rem; line-height: 1.4;">ผู้เชี่ยวชาญด้านความปลอดภัยของข้อมูล เครือข่าย และระบบปฏิบัติการตามกรอบโครงสร้างสากล</p>
+                        </div>
+                        <div class="click-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> คลิกดูใบรับรองจริง</div>
+                    </div>
+
                 </div>
             </div>
 
