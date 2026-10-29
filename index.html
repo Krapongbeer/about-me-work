@@ -160,6 +160,9 @@
                 <button class="tab-btn" onclick="switchTab('certs')">
                     <i class="fa-solid fa-shield-halved"></i> ข้อมูลใบรับรองสากล
                 </button>
+                <button class="tab-btn" onclick="switchTab('qa')">
+                    <i class="fa-solid fa-comments"></i> ตอบ 3 คำถาม
+                </button>
             </div>
 
             <!-- Tab 1: Breakdown -->
@@ -239,6 +242,127 @@
                         <div class="click-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> คลิกดูใบรับรองจริง</div>
                     </div>
 
+                </div>
+            </div>
+
+            <!-- Tab 3: Q&A (ตอบ 3 คำถาม) -->
+            <div id="qa" class="tab-content">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.6rem; font-weight: 800; background: linear-gradient(to right, var(--accent-cyan-glow), var(--accent-purple-glow)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem;">
+                        <i class="fa-solid fa-comments" style="-webkit-text-fill-color: var(--accent-cyan-glow);"></i> ตอบ 3 คำถาม
+                    </h3>
+                    <p style="color: var(--text-muted); font-size: 1rem;">วิสัยทัศน์ แผนงานพัฒนา และเส้นทางการทำงาน</p>
+                </div>
+
+                <div class="qa-grid">
+                    <!-- Q1 Card -->
+                    <div class="qa-card qa-card-1">
+                        <div class="qa-header">
+                            <div class="qa-icon-wrap icon-cyan">
+                                <i class="fa-solid fa-bullseye"></i>
+                            </div>
+                            <div class="qa-title-group">
+                                <span class="qa-tag tag-cyan">คำถามที่ 1</span>
+                                <h4 class="qa-title">ความฝัน 5 ปี และ 10 ปี คืออะไร</h4>
+                            </div>
+                        </div>
+                        <div class="qa-body">
+                            <div class="qa-item">
+                                <div class="qa-item-header">
+                                    <i class="fa-solid fa-flag-checkered" style="color: var(--accent-cyan-glow);"></i>
+                                    <strong>เป้าหมาย 5 ปี (ความก้าวหน้าในสายวิชาชีพ)</strong>
+                                </div>
+                                <p>มุ่งมั่นทำผลงานเพื่อปรับระดับเข้าสู่ตำแหน่ง <strong>"นักวิชาการคอมพิวเตอร์ชำนาญการ"</strong> โดยปัจจุบันผ่านการประเมิน IDP ระดับต้นเรียบร้อยแล้ว และกำลังจัดทำผลงานตามแผน IDP ระดับกลางอย่างต่อเนื่อง เพื่อพัฒนางานไอทีของหน่วยงานให้มีประสิทธิภาพยิ่งขึ้น</p>
+                            </div>
+                            <div class="qa-item">
+                                <div class="qa-item-header">
+                                    <i class="fa-solid fa-house-chimney-user" style="color: var(--accent-purple-glow);"></i>
+                                    <strong>เป้าหมาย 10 ปี (ความมั่นคงและชีวิตการทำงาน)</strong>
+                                </div>
+                                <p>ปลดภาระหนี้บ้านสหกรณ์ มช. ให้หมด เพื่อสร้างความมั่นคงให้ครอบครัว ควบคู่กับการพัฒนาระบบโครงสร้างพื้นฐานและเครือข่ายของกองบริหารงานกลางให้เสถียร ปลอดภัย และสนับสนุนการทำงานของทุกคนได้อย่างเต็มที่</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q2 Card -->
+                    <div class="qa-card qa-card-2">
+                        <div class="qa-header">
+                            <div class="qa-icon-wrap icon-emerald">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <div class="qa-title-group">
+                                <span class="qa-tag tag-emerald">คำถามที่ 2</span>
+                                <h4 class="qa-title">งานที่ทำและแนวทางพัฒนา</h4>
+                            </div>
+                        </div>
+                        <div class="qa-body">
+                            <div class="qa-lead-text">
+                                <i class="fa-solid fa-lightbulb" style="color: var(--accent-amber);"></i> <strong>แนวทางการทำงาน:</strong> มุ่งเน้นการนำเทคโนโลยีมาประยุกต์ใช้เพื่อแก้ปัญหาหน้างานจริง และช่วยลดขั้นตอนการทำงานภายในกองบริหารงานกลาง
+                            </div>
+                            
+                            <div class="qa-subprojects">
+                                <div class="qa-subitem">
+                                    <div class="qa-subitem-title">
+                                        <i class="fa-solid fa-database" style="color: var(--accent-cyan-glow);"></i> 
+                                        <span>1. ระบบจัดเก็บข้อมูลส่วนกลาง (On-Premise NAS)</span>
+                                    </div>
+                                    <p>ติดตั้งและนำระบบ NAS มาใช้ในกองบริหารงานกลาง เพื่อช่วยแก้ปัญหาข้อจำกัดเรื่องพื้นที่จัดเก็บข้อมูลของ OneDrive ทำให้มีพื้นที่จัดเก็บไฟล์และเอกสารสำคัญอย่างปลอดภัยและเพียงพอ</p>
+                                </div>
+
+                                <div class="qa-subitem">
+                                    <div class="qa-subitem-title">
+                                        <i class="fa-solid fa-chart-line" style="color: var(--accent-emerald);"></i> 
+                                        <span>2. CAD IT Asset Dashboard</span>
+                                    </div>
+                                    <p>พัฒนาระบบแดชบอร์ดบริหารจัดการทรัพย์สินไอทีของกองฯ ช่วยให้สามารถตรวจสอบจำนวน ติดตามสถานะอุปกรณ์ และวางแผนการซ่อมบำรุงได้อย่างเป็นระบบ</p>
+                                </div>
+
+                                <div class="qa-subitem highlight-subitem">
+                                    <div class="qa-subitem-title">
+                                        <i class="fa-solid fa-paper-plane" style="color: var(--accent-rose);"></i> 
+                                        <span>3. ระบบรับ-ส่งหนังสือและพัสดุ SmartCAD-Messenger <span class="badge-pilot">Pilot Project</span></span>
+                                    </div>
+                                    <p>ร่วมกับคุณอนุญาชัย และคุณณัฐพงษ์ ในการปรับเปลี่ยนกระบวนการรับ-ส่งหนังสือและพัสดุจากระบบกระดาษมาสู่ระบบดิจิทัล โดยใช้แท็บเล็ตในการลงระบบ ถ่ายภาพเป็นหลักฐาน และลงลายมือชื่อ เพื่อความสะดวกรวดเร็วและตรวจสอบได้ <em>(ปัจจุบันยังไม่มีอุปกรณ์ Tablet หากเป็นไปได้อยากขอความอนุเคราะห์สนับสนุนอุปกรณ์ Tablet เก่า เพื่อนำมาใช้ในโครงการ)</em></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q3 Card -->
+                    <div class="qa-card qa-card-3">
+                        <div class="qa-header">
+                            <div class="qa-icon-wrap icon-amber">
+                                <i class="fa-solid fa-comment-dots"></i>
+                            </div>
+                            <div class="qa-title-group">
+                                <span class="qa-tag tag-amber">คำถามที่ 3</span>
+                                <h4 class="qa-title">เส้นทางการทำงานและสิ่งที่อยากบอก</h4>
+                            </div>
+                        </div>
+                        <div class="qa-body">
+                            <div class="qa-item">
+                                <div class="qa-item-header">
+                                    <i class="fa-solid fa-user-graduate" style="color: var(--accent-amber);"></i>
+                                    <strong>ประวัติและตัวตน (<a href="https://cmu.to/BEER" target="_blank" class="qa-link">cmu.to/BEER</a>)</strong>
+                                </div>
+                                <p>สำเร็จการศึกษาทั้งปริญญาตรีและปริญญาโท สาขาวิชาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยเชียงใหม่ มีความถนัดและรับผิดชอบหลักในงานด้าน IT Infrastructure, ระบบเครือข่าย และความมั่นคงปลอดภัยสารสนเทศ</p>
+                            </div>
+                            <div class="qa-item">
+                                <div class="qa-item-header">
+                                    <i class="fa-solid fa-route" style="color: var(--accent-cyan-glow);"></i>
+                                    <strong>การเดินทางและการเรียนรู้งาน</strong>
+                                </div>
+                                <p>เริ่มต้นทำงานที่สถาบันวิจัยสังคม ซึ่งเป็นหน่วยงานขนาดเล็ก จึงได้รับมอบหมายให้ดูแลงานไอทีทุกรูปแบบอย่างครบวงจร และเคยผ่านการปรับเปลี่ยนสายงานมาหลายบทบาท (นักเทคโนโลยีสารสนเทศ ➔ พนักงานปฏิบัติงาน ➔ นักจัดการงานทั่วไป) ทำให้ได้เรียนรู้ทั้งงานเอกสาร ธุรการ และระบบการทำงานขององค์กรอย่างเข้าใจ</p>
+                            </div>
+                            <div class="qa-item highlight-thank">
+                                <div class="qa-item-header">
+                                    <i class="fa-solid fa-heart" style="color: var(--accent-rose);"></i>
+                                    <strong>โอกาสสำคัญและความตั้งใจ</strong>
+                                </div>
+                                <p>เมื่อได้ย้ายมาสังกัดกองบริหารงานกลาง สำนักงานมหาวิทยาลัย ได้รับโอกาสที่ดีจาก <strong>ผอ.พิบูลย์</strong> ในการเปลี่ยนสายงานกลับมาสู่ตำแหน่ง <strong>"นักวิชาการคอมพิวเตอร์"</strong> ตามสาขาวิชาชีพที่จบมา จึงตั้งใจนำความรู้และประสบการณ์ทั้งหมด มาช่วยพัฒนาระบบงานของกองบริหารงานกลางให้เกิดประโยชน์สูงสุด</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
