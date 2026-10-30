@@ -114,6 +114,26 @@
                          <li style="margin-bottom: 0.5rem;">เสริมสร้างความตระหนักรู้ด้านความปลอดภัย (Security Awareness) และการป้องกันข้อมูลรั่วไหล</li>
                          <li>เป็น Helpdesk ช่วยแก้ปัญหาทางเทคนิคและยกระดับทักษะดิจิทัลขององค์กร</li>
                        </ul>`
+            },
+            'task6': {
+                title: 'ภาระงานที่ได้รับมอบหมายอื่น ๆ (หมวดที่ 2)',
+                icon: '<i class="fa-solid fa-list-check" style="color: var(--accent-emerald);"></i>',
+                body: `ปฏิบัติหน้าที่และภารกิจพิเศษที่ได้รับมอบหมายจากผู้บังคับบัญชา และกองบริหารงานกลาง สำนักงานมหาวิทยาลัย<br><br>
+                       <ul style="padding-left: 1.5rem; margin-top: 0.5rem; text-align: left;">
+                         <li style="margin-bottom: 0.5rem;">สนับสนุนงานกิจกรรม งานพิธีการสำคัญ และงานประชุมสัมมนาของมหาวิทยาลัยเชียงใหม่</li>
+                         <li style="margin-bottom: 0.5rem;">ร่วมขับเคลื่อนโครงการพิเศษและงานประสานงานระหว่างหน่วยงานภายในและภายนอกสำนักงานมหาวิทยาลัย</li>
+                         <li>ปฏิบัติภารกิจเร่งด่วนตามที่ผู้บังคับบัญชามอบหมาย เพื่อให้การดำเนินงานของกองฯ สำเร็จลุล่วงตามเป้าหมาย</li>
+                       </ul>`
+            },
+            'task7': {
+                title: 'ภาระงานเชิงพัฒนา (Continuous Development - หมวดที่ 3)',
+                icon: '<i class="fa-solid fa-graduation-cap" style="color: var(--accent-rose);"></i>',
+                body: `การพัฒนาตนเองอย่างต่อเนื่อง (Continuous Professional Development) ตามแผนพัฒนาบุคลากร (IDP)<br><br>
+                       <ul style="padding-left: 1.5rem; margin-top: 0.5rem; text-align: left;">
+                         <li style="margin-bottom: 0.5rem;">เข้าร่วมการฝึกอบรม สัมมนา และศึกษาดูงานด้านเทคโนโลยีสารสนเทศและความมั่นคงปลอดภัยไซเบอร์</li>
+                         <li style="margin-bottom: 0.5rem;">ขับเคลื่อนและจัดทำผลงานตามแผนพัฒนาตนเอง (IDP) จากระดับต้นสู่ระดับกลาง</li>
+                         <li>ศึกษาและวิจัยเทคโนโลยีใหม่ ๆ (เช่น On-Premise NAS, AI, Automation, Cloud Security) เพื่อนำมาประยุกต์ใช้พัฒนางานจริง</li>
+                       </ul>`
             }
         };
 

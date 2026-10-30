@@ -476,6 +476,8 @@
         .card-3::before { background-image: url('https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&q=80&w=800'); } /* Computer Repair */
         .card-4::before { background-image: url('../images/inventory.jpg'); } /* Inventory (Local HQ Image) */
         .card-5::before { background-image: url('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800'); } /* Consulting */
+        .card-6::before { background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800'); } /* Assigned Duties */
+        .card-7::before { background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800'); } /* Continuous Development */
 
         .card-content {
             position: relative;
@@ -575,6 +577,7 @@
         /* Grid Spans */
         .card-1, .card-2 { grid-column: span 3; min-height: 220px; }
         .card-3, .card-4, .card-5 { grid-column: span 2; }
+        .card-6, .card-7 { grid-column: span 3; min-height: 200px; }
 
         /* Animation delays */
         .card-1 { animation-delay: 0.1s; }
@@ -582,6 +585,8 @@
         .card-3 { animation-delay: 0.3s; }
         .card-4 { animation-delay: 0.4s; }
         .card-5 { animation-delay: 0.5s; }
+        .card-6 { animation-delay: 0.6s; }
+        .card-7 { animation-delay: 0.7s; }
 
         @keyframes zoomIn {
             from { opacity: 0; transform: scale(0.95) translateY(20px); }
@@ -1102,7 +1107,7 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .card-1, .card-2, .card-3, .card-4, .card-5 { grid-column: span 3; }
+            .card-1, .card-2, .card-3, .card-4, .card-5, .card-6, .card-7 { grid-column: span 3; }
         }
 
         @media (max-width: 768px) {
@@ -1142,7 +1147,7 @@
                 align-items: flex-start;
                 gap: 1rem;
             }
-            .card-1, .card-2, .card-3, .card-4, .card-5 { grid-column: span 6; }
+            .card-1, .card-2, .card-3, .card-4, .card-5, .card-6, .card-7 { grid-column: span 6; }
         }
         
         #circuitCanvas {
