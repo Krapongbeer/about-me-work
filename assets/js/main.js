@@ -33,6 +33,18 @@
             event.currentTarget.classList.add('active');
         }
 
+        // Sub-Flow Switching
+        function switchFlow(flowId) {
+            document.querySelectorAll('.flow-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.flow-pill-btn').forEach(el => el.classList.remove('active'));
+            
+            const target = document.getElementById(flowId);
+            if (target) target.classList.add('active');
+            if (event && event.currentTarget) {
+                event.currentTarget.classList.add('active');
+            }
+        }
+
         // Modal Functions for Certificates
         function openCertModal(imageSrc, captionText) {
             const modal = document.getElementById('certModal');

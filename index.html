@@ -185,6 +185,9 @@
                 <button class="tab-btn" onclick="switchTab('certs')">
                     <i class="fa-solid fa-shield-halved"></i> ข้อมูลใบรับรองสากล
                 </button>
+                <button class="tab-btn" onclick="switchTab('workflows')">
+                    <i class="fa-solid fa-diagram-project"></i> Flow การทำงาน
+                </button>
                 <button class="tab-btn" onclick="switchTab('breakdown')">
                     <i class="fa-solid fa-chart-pie"></i> โครงสร้าง TOR รวม (35 ชม.)
                 </button>
@@ -342,17 +345,273 @@
                         <div class="click-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> คลิกดูใบรับรองจริง</div>
                     </div>
                     
-                    <!-- Cert 3 (ECSS) -->
-                    <div class="cert-item-card" onclick="openCertModal('assets/images/ECSS.png', 'EC-Council Certified Security Specialist')">
-                        <img src="assets/images/badge-ECSS.png" alt="ECSS" class="cert-logo-img" style="filter: drop-shadow(0 6px 12px rgba(244, 63, 94, 0.3)); border-radius: 50%;">
-                        <div>
-                            <div style="font-weight: 800; font-size: 1.2rem;">EC-Council ECSS</div>
-                            <div style="font-size: 0.9rem; color: var(--accent-rose); margin-top: 0.3rem;">Certified Security Specialist</div>
-                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.8rem; line-height: 1.4;">ผู้เชี่ยวชาญด้านความปลอดภัยของข้อมูล เครือข่าย และระบบปฏิบัติการตามกรอบโครงสร้างสากล</p>
-                        </div>
-                        <div class="click-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> คลิกดูใบรับรองจริง</div>
+            </div>
+
+            <!-- Tab 3: Workflows (Flow การทำงาน) -->
+            <div id="workflows" class="tab-content">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.6rem; font-weight: 800; background: linear-gradient(to right, var(--accent-cyan-glow), var(--accent-purple-glow)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem;">
+                        <i class="fa-solid fa-diagram-project" style="-webkit-text-fill-color: var(--accent-cyan-glow);"></i> Flow ขั้นตอนการปฏิบัติงาน (Workflows)
+                    </h3>
+                    <p style="color: var(--text-muted); font-size: 1rem;">กระบวนการทำงานมาตรฐาน (Standard Operating Procedures) ของนักวิชาการคอมพิวเตอร์ กองบริหารงานกลาง</p>
+                </div>
+
+                <!-- Flow Selector Pills -->
+                <div class="flow-pills-nav">
+                    <button class="flow-pill-btn active" onclick="switchFlow('flow-meeting')">
+                        <i class="fa-solid fa-people-roof"></i> 1. ดูแลห้องประชุม (10 ชม.)
+                    </button>
+                    <button class="flow-pill-btn" onclick="switchFlow('flow-repair')">
+                        <i class="fa-solid fa-screwdriver-wrench"></i> 2. ซ่อมบำรุงคอมพิวเตอร์ (6 ชม.)
+                    </button>
+                    <button class="flow-pill-btn" onclick="switchFlow('flow-network')">
+                        <i class="fa-solid fa-server"></i> 3. ระบบเครือข่าย & Security (6 ชม.)
+                    </button>
+                    <button class="flow-pill-btn" onclick="switchFlow('flow-smartcad')">
+                        <i class="fa-solid fa-paper-plane"></i> 4. SmartCAD-Messenger
+                    </button>
+                    <button class="flow-pill-btn" onclick="switchFlow('flow-itil')">
+                        <i class="fa-solid fa-award"></i> 5. มาตรฐานสากล ITIL
+                    </button>
+                </div>
+
+                <!-- Flow 1: Meeting Room -->
+                <div id="flow-meeting" class="flow-content active">
+                    <div class="flow-header-card">
+                        <div class="flow-badge badge-cyan"><i class="fa-solid fa-people-roof"></i> ภาระงานหลัก 10.00 ชม./สัปดาห์</div>
+                        <h4>ขั้นตอนการดูแลและสนับสนุนห้องประชุมที่กองบริหารงานกลางรับผิดชอบ</h4>
+                        <p>มุ่งเน้นความพร้อมสูงสุดของระบบภาพ เสียง แสงสว่าง และระบบ Video Conference สำหรับการประชุมระดับผู้บริหารและส่วนกลาง (เช่น ห้องประชุมบัวเรศ คำทอง)</p>
                     </div>
 
+                    <div class="step-timeline">
+                        <div class="step-card">
+                            <div class="step-num-badge">01</div>
+                            <div class="step-icon-box" style="color: var(--accent-cyan-glow);"><i class="fa-solid fa-calendar-check"></i></div>
+                            <h5>รับกำหนดการ & ประสานงาน</h5>
+                            <p>รับข้อมูลการจองห้องประชุม วัตถุประสงค์ จำนวนผู้เข้าร่วม และรูปแบบการประชุม (On-site / Hybrid / Video Conference)</p>
+                            <span class="step-tag">Phase: Request</span>
+                        </div>
+                        <div class="step-arrow"><i class="fa-solid fa-angle-right"></i></div>
+
+                        <div class="step-card">
+                            <div class="step-num-badge">02</div>
+                            <div class="step-icon-box" style="color: var(--accent-purple-glow);"><i class="fa-solid fa-sliders"></i></div>
+                            <h5>Set Up & ทดสอบระบบล่วงหน้า</h5>
+                            <p>เข้าเตรียมห้องล่วงหน้า 30-60 นาที ทดสอบไมโครโฟน เครื่องขยายเสียง โปรเจกเตอร์ จอภาพ สัญญาณอินเทอร์เน็ต และระบบ Zoom / Teams</p>
+                            <span class="step-tag">Phase: Inspection</span>
+                        </div>
+                        <div class="step-arrow"><i class="fa-solid fa-angle-right"></i></div>
+
+                        <div class="step-card">
+                            <div class="step-num-badge">03</div>
+                            <div class="step-icon-box" style="color: var(--accent-cyan-glow);"><i class="fa-solid fa-headset"></i></div>
+                            <h5>ควบคุม & สแตนด์บายซัพพอร์ต</h5>
+                            <p>ประจำการควบคุมระบบภาพ-เสียงตลอดการประชุม สลับสัญญาณภาพ นำเสนอเอกสาร และแก้ไขปัญหาทางเทคนิคเฉพาะหน้าทันที</p>
+                            <span class="step-tag">Phase: Live Operation</span>
+                        </div>
+                        <div class="step-arrow"><i class="fa-solid fa-angle-right"></i></div>
+
+                        <div class="step-card">
+                            <div class="step-num-badge">04</div>
+                            <div class="step-icon-box" style="color: #34d399;"><i class="fa-solid fa-power-off"></i></div>
+                            <h5>ปิดระบบ & ตรวจนับครุภัณฑ์</h5>
+                            <p>ปิดอุปกรณ์ตามลำดับขั้นตอน (Shutdown Sequence) บันทึกและตรวจเช็คสภาพความพร้อมของอุปกรณ์เพื่อเตรียมพร้อมสำหรับการประชุมรอบถัดไป</p>
+                            <span class="step-tag">Phase: Closure</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flow 2: Computer Maintenance -->
+                <div id="flow-repair" class="flow-content">
+                    <div class="flow-header-card">
+                        <div class="flow-badge badge-emerald"><i class="fa-solid fa-screwdriver-wrench"></i> ภาระงาน 6.00 ชม./สัปดาห์</div>
+                        <h4>ขั้นตอนการซ่อมบำรุงคอมพิวเตอร์และอุปกรณ์ต่อพ่วง (Helpdesk & Maintenance)</h4>
+                        <p>ให้บริการตรวจเช็ค ซ่อมแซม อัปเกรดเครื่องคอมพิวเตอร์และอุปกรณ์ต่อพ่วง ให้พร้อมใช้งานและทำงานได้อย่างมีเสถียรภาพ</p>
+                    </div>
+
+                    <div class="step-timeline">
+                        <div class="step-card">
+                            <div class="step-num-badge">01</div>
+                            <div class="step-icon-box" style="color: var(--accent-amber);"><i class="fa-solid fa-phone-volume"></i></div>
+                            <h5>รับแจ้งปัญหา (Helpdesk)</h5>
+                            <p>รับเรื่องร้องเรียนหรือคำขอซ่อมบำรุง วินิจฉัยอาการเบื้องต้นผ่านโทรศัพท์หรือการลงพื้นที่ตรวจเช็คสภาพเครื่อง</p>
+                            <span class="step-tag">Phase: Intake</span>
+                        </div>
+                        <div class="step-arrow"><i class="fa-solid fa-angle-right"></i></div>
+
+                        <div class="step-card">
+                            <div class="step-num-badge">02</div>
+                            <div class="step-icon-box" style="color: var(--accent-purple-glow);"><i class="fa-solid fa-hard-drive"></i></div>
+                            <h5>สำรองข้อมูลสำคัญ (Data Backup)</h5>
+                            <p>ดำเนินการสำรองไฟล์และข้อมูลสำคัญของผู้ใช้งานก่อนลงมือซ่อมบำรุง เพื่อป้องกันความเสี่ยงข้อมูลสูญหาย 100%</p>
+                            <span class="step-tag">Phase: Protection</span>
+                        </div>
+                        <div class="step-arrow"><i class="fa-solid fa-angle-right"></i></div>
+
+                        <div class="step-card">
+                            <div class="step-num-badge">03</div>
+                            <div class="step-icon-box" style="color: var(--accent-cyan-glow);"><i class="fa-solid fa-microchip"></i></div>
+                            <h5>ซ่อมบำรุง & อัปเกรดระบบ</h5>
+                            <p>แก้ไขฮาร์ดแวร์ เปลี่ยนอะไหล่ เป่าฝุ่นทำความสะอาด จัดการระบบปฏิบัติการ ไดรเวอร์ และปรับแต่ง Custom Spec ให้เหมาะสมกับลักษณะงาน</p>
+                            <span class="step-tag">Phase: Resolution</span>
+                        </div>
+                        <div class="step-arrow"><i class="fa-solid fa-angle-right"></i></div>
+
+                        <div class="step-card">
+                            <div class="step-num-badge">04</div>
+                            <div class="step-icon-box" style="color: #34d399;"><i class="fa-solid fa-shield-virus"></i></div>
+                            <h5>ตั้งค่าความปลอดภัย & ส่งมอบ</h5>
+                            <p>ติดตั้งโปรแกรมป้องกันไวรัส อัปเดต Security Patch ตรวจสอบความปลอดภัยตามมาตรฐาน และทดสอบการใช้งานร่วมกับผู้ใช้</p>
+                            <span class="step-tag">Phase: Delivery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flow 3: Network & Security -->
+                <div id="flow-network" class="flow-content">
+                    <div class="flow-header-card">
+                        <div class="flow-badge badge-purple"><i class="fa-solid fa-server"></i> ภาระงาน 6.00 ชม./สัปดาห์</div>
+                        <h4>ขั้นตอนการบริหารจัดการระบบเทคโนโลยีสารสนเทศและเฝ้าระวังไซเบอร์</h4>
+                        <p>ดูแลสถาปัตยกรรม Server, Network, On-Premise NAS และความมั่นคงปลอดภัยสารสนเทศของกองบริหารงานกลาง</p>
+                    </div>
+
+                    <div class="step-timeline">
+                        <div class="step-card">
+                            <div class="step-num-badge">01</div>
+                            <div class="step-icon-box" style="color: var(--accent-cyan-glow);"><i class="fa-solid fa-heart-pulse"></i></div>
+                            <h5>Daily Health Check</h5>
+                            <p>ตรวจสอบสถานะความพร้อมของ Network Switch, Access Point และ Server แม่ข่ายให้พร้อมให้บริการตลอด 24 ชั่วโมง</p>
+                            <span class="step-tag">Phase: Monitoring</span>
+                        </div>
+                        <div class="step-arrow"><i class="fa-solid fa-angle-right"></i></div>
+
+                        <div class="step-card">
+                            <div class="step-num-badge">02</div>
+                            <div class="step-icon-box" style="color: var(--accent-purple-glow);"><i class="fa-solid fa-database"></i></div>
+                            <h5>จัดการพื้นที่จัดเก็บข้อมูล NAS</h5>
+                            <p>บริหารจัดการพื้นที่เก็บข้อมูลส่วนกลาง NAS เชื่อมโยงสิทธิ์การเข้าถึง และแก้ปัญหาข้อจำกัดของ OneDrive สำหรับไฟล์ขนาดใหญ่</p>
+                            <span class="step-tag">Phase: Storage & Data</span>
+                        </div>
+                        <div class="step-arrow"><i class="fa-solid fa-angle-right"></i></div>
+
+                        <div class="step-card">
+                            <div class="step-num-badge">03</div>
+                            <div class="step-icon-box" style="color: var(--accent-rose);"><i class="fa-solid fa-shield-halved"></i></div>
+                            <h5>เฝ้าระวังภัยคุกคามไซเบอร์</h5>
+                            <p>ตรวจสอบ Log ผิดปกติ ป้องกันภัยคุกคามตามกรอบมาตรฐานใบรับรองสากล CompTIA Security+ และ ISC2 Certified in Cybersecurity</p>
+                            <span class="step-tag">Phase: Defense</span>
+                        </div>
+                        <div class="step-arrow"><i class="fa-solid fa-angle-right"></i></div>
+
+                        <div class="step-card">
+                            <div class="step-num-badge">04</div>
+                            <div class="step-icon-box" style="color: #34d399;"><i class="fa-solid fa-chart-pie"></i></div>
+                            <h5>บันทึก CAD IT Asset Dashboard</h5>
+                            <p>อัปเดตสถิติการใช้งาน สถานะของทรัพย์สินด้านไอที เพื่อการวางแผนจัดซื้อ ซ่อมบำรุง และบริหารจัดการอย่างมีประสิทธิภาพ</p>
+                            <span class="step-tag">Phase: Tracking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flow 4: SmartCAD-Messenger -->
+                <div id="flow-smartcad" class="flow-content">
+                    <div class="flow-header-card">
+                        <div class="flow-badge badge-rose"><i class="fa-solid fa-paper-plane"></i> โครงการนำร่องร่วมกับงานสารบรรณ</div>
+                        <h4>ขั้นตอนการรับ-ส่งหนังสือและพัสดุ SmartCAD-Messenger (Digital Transformation)</h4>
+                        <p>เปลี่ยนผ่านกระบวนการรับ-ส่งหนังสือและพัสดุทางอากาศยานจากการใช้กระดาษสู่ระบบดิจิทัล (Paperless) ร่วมกับคุณอนุญาชัย และคุณณัฐพงษ์</p>
+                    </div>
+
+                    <div class="step-timeline">
+                        <div class="step-card">
+                            <div class="step-num-badge">01</div>
+                            <div class="step-icon-box" style="color: var(--accent-amber);"><i class="fa-solid fa-boxes-packing"></i></div>
+                            <h5>คัดแยกพัสดุ & หนังสือราชการ</h5>
+                            <p>งานสารบรรณจำแนกเอกสารและพัสดุที่ต้องนำส่งด่วนทางเครื่องบินตามลำดับความสำคัญและเส้นทางการส่ง</p>
+                            <span class="step-tag">Phase: Sorting</span>
+                        </div>
+                        <div class="step-arrow"><i class="fa-solid fa-angle-right"></i></div>
+
+                        <div class="step-card">
+                            <div class="step-num-badge">02</div>
+                            <div class="step-icon-box" style="color: var(--accent-cyan-glow);"><i class="fa-solid fa-tablet-screen-button"></i></div>
+                            <h5>บันทึก & ถ่ายรูปหลักฐานผ่าน Tablet</h5>
+                            <p>บันทึกข้อมูลเข้าระบบ ถ่ายภาพพัสดุและเอกสารเป็นหลักฐานดิจิทัล แทนการจดบันทึกลงสมุดคุมแบบกระดาษ</p>
+                            <span class="step-tag">Phase: Digital Entry</span>
+                        </div>
+                        <div class="step-arrow"><i class="fa-solid fa-angle-right"></i></div>
+
+                        <div class="step-card">
+                            <div class="step-num-badge">03</div>
+                            <div class="step-icon-box" style="color: var(--accent-purple-glow);"><i class="fa-solid fa-truck-fast"></i></div>
+                            <h5>เดินทางนำส่งผู้รับปลายทาง</h5>
+                            <p>เจ้าหน้าที่ Messenger นำส่งสิ่งของถึงหน่วยงานเป้าหมายอย่างแม่นยำ พร้อมระบบติดตามสถานะการนำส่ง</p>
+                            <span class="step-tag">Phase: Dispatch</span>
+                        </div>
+                        <div class="step-arrow"><i class="fa-solid fa-angle-right"></i></div>
+
+                        <div class="step-card">
+                            <div class="step-num-badge">04</div>
+                            <div class="step-icon-box" style="color: #34d399;"><i class="fa-solid fa-signature"></i></div>
+                            <h5>ลงลายมือชื่อดิจิทัล (Sign on Glass)</h5>
+                            <p>ผู้รับตรวจเช็คพัสดุและเซ็นรับผ่านหน้าจอ Tablet ระบบยืนยันการรับสำเร็จแบบ Real-time ตรวจสอบย้อนหลังได้ 100%</p>
+                            <span class="step-tag">Phase: Verified Completion</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flow 5: ITIL Standard -->
+                <div id="flow-itil" class="flow-content">
+                    <div class="flow-header-card">
+                        <div class="flow-badge badge-amber"><i class="fa-solid fa-award"></i> มาตรฐานสากล ITIL / ITSM</div>
+                        <h4>วงจรการให้บริการและบริหารจัดการไอทีตามมาตรฐานสากล (Standard ITIL Lifecycle)</h4>
+                        <p>กรอบการดำเนินงานตามมาตรฐานสากล เพื่อความเป็นเลิศในการสนับสนุนภารกิจของกองบริหารงานกลาง มหาวิทยาลัยเชียงใหม่</p>
+                    </div>
+
+                    <div class="step-timeline">
+                        <div class="step-card">
+                            <div class="step-num-badge">01</div>
+                            <div class="step-icon-box" style="color: var(--accent-cyan-glow);"><i class="fa-solid fa-inbox"></i></div>
+                            <h5>Incident & Request</h5>
+                            <p>รับเรื่อง จำแนกประเภท และบันทึกคำขอรับบริการผ่านช่องทางมาตรฐานของหน่วยงาน</p>
+                            <span class="step-tag">Stage 1</span>
+                        </div>
+                        <div class="step-arrow"><i class="fa-solid fa-angle-right"></i></div>
+
+                        <div class="step-card">
+                            <div class="step-num-badge">02</div>
+                            <div class="step-icon-box" style="color: var(--accent-purple-glow);"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                            <h5>Diagnosis & Assessment</h5>
+                            <p>วิเคราะห์หาสาเหตุ ประเมินผลกระทบ และวางแผนมาตรการป้องกันความเสี่ยงด้านข้อมูล</p>
+                            <span class="step-tag">Stage 2</span>
+                        </div>
+                        <div class="step-arrow"><i class="fa-solid fa-angle-right"></i></div>
+
+                        <div class="step-card">
+                            <div class="step-num-badge">03</div>
+                            <div class="step-icon-box" style="color: var(--accent-emerald);"><i class="fa-solid fa-gears"></i></div>
+                            <h5>Execution & Troubleshooting</h5>
+                            <p>ลงมือแก้ไขปัญหาตามขั้นตอนมาตรฐาน (SOP) ด้วยความชำนาญและรวดเร็ว</p>
+                            <span class="step-tag">Stage 3</span>
+                        </div>
+                        <div class="step-arrow"><i class="fa-solid fa-angle-right"></i></div>
+
+                        <div class="step-card">
+                            <div class="step-num-badge">04</div>
+                            <div class="step-icon-box" style="color: var(--accent-rose);"><i class="fa-solid fa-shield-check"></i></div>
+                            <h5>Testing & Security Audit</h5>
+                            <p>ทดสอบการใช้งานร่วมกับผู้รับบริการ และตรวจสอบความปลอดภัยตามมาตรฐานไซเบอร์</p>
+                            <span class="step-tag">Stage 4</span>
+                        </div>
+                        <div class="step-arrow"><i class="fa-solid fa-angle-right"></i></div>
+
+                        <div class="step-card">
+                            <div class="step-num-badge">05</div>
+                            <div class="step-icon-box" style="color: #34d399;"><i class="fa-solid fa-arrows-rotate"></i></div>
+                            <h5>Closure & Innovation</h5>
+                            <p>ปิดงาน บันทึกสินทรัพย์ และนำข้อมูลมาวิเคราะห์เพื่อพัฒนานวัตกรรมอย่างต่อเนื่อง</p>
+                            <span class="step-tag">Stage 5</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
